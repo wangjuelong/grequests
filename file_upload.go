@@ -25,8 +25,8 @@ type FileUpload struct {
 }
 
 // FileUploadFromDisk allows you to create a FileUpload struct slice by just specifying a location on the disk
-func FileUploadFromDisk(fileName string) ([]FileUpload, error) {
-	fd, err := os.Open(fileName)
+func FileUploadFromDisk(filePath, fileName string) ([]FileUpload, error) {
+	fd, err := os.Open(filePath)
 
 	if err != nil {
 		return nil, err
